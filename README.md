@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-#### Project in progress...
+# Project in progress...
 
 This project is to familiarize myself with TypeScript, Authentication, and Stripe better. Made with Tailwind and Supabase.
 
