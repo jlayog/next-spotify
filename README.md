@@ -7,3 +7,4 @@ TODO:
 - Debug Toaster Package
 - Finish Upload Modal
 - Create form for mp3 upload
+- Configure database for song schema
