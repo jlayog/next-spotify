@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 #### Project in progress...
 
+This project is to familiarize myself with TypeScript, Authentication, and Stripe better. Made with Tailwind and Supabase.
+
 10/1
 TODO: 
 - Debug Toaster Package
