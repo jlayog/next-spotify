@@ -1,6 +1,4 @@
 // Load User Details & Subscription check
-
-import { User } from "@supabase/auth-helpers-nextjs";
 import { 
     createContext,
     useContext, 
@@ -8,12 +6,15 @@ import {
     useEffect 
 } from "react";
 
-import { Subscription, UserDetails } from "@/types";
 // Remap useUser to avoid conflicts in naming schema
 import { 
-        useSessionContext, 
-        useUser as useSupaUser 
+    useSessionContext, 
+    useUser as useSupaUser,
+    User
 } from "@supabase/auth-helpers-react";
+
+import { Subscription, UserDetails } from "@/types";
+
 
 type UserContextType = {
     accessToken: string | null;
