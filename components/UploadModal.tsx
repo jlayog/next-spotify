@@ -26,7 +26,6 @@ const UploadModal = () => {
         register,
         handleSubmit,
         reset,
-        formState: { errors },
     } = useForm<FieldValues>({
         defaultValues: {
             author: '',
@@ -88,6 +87,7 @@ const UploadModal = () => {
                     cacheControl: '3600',
                     upsert: false
                 });
+
                 if (imageError) {
                     setIsLoading(false);
                     return toast.error('Image failed to upload');
@@ -98,7 +98,7 @@ const UploadModal = () => {
                 } = await supabaseClient
                     .from('songs')
                     .insert({
-                        user: user.id,
+                        user_id: user.id,
                         title: values.id,
                         author: values.author,
                         image_path: imageData.path,
@@ -109,7 +109,11 @@ const UploadModal = () => {
                     return toast.error(supabaseError.message)
                 }  
                 
-                router 
+            router.refresh();
+            setIsLoading(false);
+            toast.success('Song uploaded successfully');
+            reset();
+            uploadModal.onClose();
         } catch (error) {
             toast.error("Something went wrong")
         } finally {
@@ -131,7 +135,6 @@ const UploadModal = () => {
                 <Input
                     id="title"
                     disabled={isLoading}
-                    aria-invalid={ errors.name ? "true" : "false" }
                     {...register('title', { required: true, minLength: 3 })}
                     placeholder="Song title"
                 />
