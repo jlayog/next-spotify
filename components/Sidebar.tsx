@@ -1,5 +1,6 @@
 "use client"; //Dynamic - correct way to pass down server props
 
+//importing necessary components
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { HiHome } from "react-icons/hi"
@@ -8,13 +9,16 @@ import Box from "./Box";
 import SidebarItem from "./SidebarItem";
 import Library from "./Library";
 
+//defining the props of the component
 interface SidebarProps {
     children: React.ReactNode;
 }
 const Sidebar: React.FC<SidebarProps> = ({
     children
 }) => {
+    //getting the pathname from the navigation
     const pathname = usePathname();
+    //creating an array of objects containing the necessary props for the SidebarItems
     const routes = useMemo(() => [
         {
             icon: HiHome,
@@ -73,4 +77,5 @@ const Sidebar: React.FC<SidebarProps> = ({
     )
 }
 
+//exporting the component
 export default Sidebar
