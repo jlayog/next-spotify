@@ -52,5 +52,5 @@ TODO:
 
   - Content Delivery Network (CDN):
 
-    Use a CDN to distribute song files and other static assets closer to users. This decreases load times and reduces strain on your primary servers.
+    - Use a CDN to distribute song files and other static assets closer to users. This decreases load times and reduces strain on your primary servers.
     
