@@ -40,3 +40,17 @@ TODO:
         details: "Let users search for songs, artists, and albums."
 
   # Create song Modal
+
+  description: "Modal for invidual songs when selected."
+
+  tasks:
+    TBD
+
+# System Design keypoints
+
+  Scaling: 
+
+  - Content Delivery Network (CDN):
+
+    Use a CDN to distribute song files and other static assets closer to users. This decreases load times and reduces strain on your primary servers.
+    
