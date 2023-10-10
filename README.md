@@ -11,7 +11,7 @@ TODO:
 - ~~Configure database for song schema~~
 - ~~Song fetch from Supabase~~
 - workflow:
-  # Displaying songs on the homepage
+  ## Displaying songs on the homepage
 
   display_songs_homepage:
 
@@ -26,7 +26,7 @@ TODO:
         # Display the fetched songs in the chosen layout on the frontend.
         details: "Iterate through fetched songs and display them on the page."
 
-  # Additional Features (Optional)
+  ## Additional Features (Optional)
 
   additional_features:
 
@@ -39,18 +39,31 @@ TODO:
       - name: "Search functionality"
         details: "Let users search for songs, artists, and albums."
 
-  # Create song Modal
+  ## Create song Modal
 
   description: "Modal for invidual songs when selected."
 
   tasks:
     TBD
 
-# System Design keypoints
+## System Design keypoints
 
-  Scaling: 
+### Scaling: 
 
   - Content Delivery Network (CDN):
 
-    - Use a CDN to distribute song files and other static assets closer to users. This decreases load times and reduces strain on your primary servers.
+    - Use a CDN to distribute song files and other static assets closer to users. This decreases load times and reduces strain on primary servers.
+
+ - Load Balancers:
+
+    - Distribute incoming traffic to various servers to prevent any single server from getting overwhelmed.
     
+- Caching:
+
+    - Introduce caching layers (like Redis) to store frequent database queries or session information. This significantly reduces database load.
+ 
+### Shortfalls
+
+- One person testing, perhaps consider playwright or other services to test the site.
+
+Will think of more when it comes to mind...
