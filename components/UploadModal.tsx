@@ -30,6 +30,7 @@ const UploadModal = () => {
         defaultValues: {
             author: '',
             title: '',
+            album: '',
             song: null,
             image: null,
         }
@@ -101,6 +102,7 @@ const UploadModal = () => {
                         user_id: user.id,
                         title: values.title,
                         author: values.author,
+                        album: values.album,
                         image_path: imageData.path,
                         song_path: songData.path
                     })
@@ -145,6 +147,12 @@ const UploadModal = () => {
                     disabled={isLoading}
                     {...register('author', { required: true })}
                     placeholder="Song author"
+                />
+                <Input
+                    id="album"
+                    disabled={isLoading}
+                    {...register('album')}
+                    placeholder="Song Album"
                 />
                 <div>
                     <div className="pb-1">
