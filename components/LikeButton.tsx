@@ -20,19 +20,20 @@ const LikeButton: React.FC<LikeButtonProps> = ({
     const authModal = useAuthModal();
     const { user } = useUser();
 
-    const [isLiked, setIsLiked] = useState(false);
+    const [isLiked, setIsLiked] = useState<boolean>(false);
 
     useEffect(() => {
         if (!user?.id) {
             return;
         }
+
         const fetchData = async () => {
             const { data, error } = await supabaseClient
-                                            .from('liked_songs')
-                                            .select('*')
-                                            .eq('song_id', songId)
-                                            .eq('user_id', user.id)
-                                            .single();
+                .from('liked_songs')
+                .select('*')
+                .eq('user_id', user.id)
+                .eq('song_id', songId)
+                .single();
             if (error) {
                 console.log(error);
                 return;
@@ -54,10 +55,11 @@ const LikeButton: React.FC<LikeButtonProps> = ({
 
         if (isLiked) {
             const { error } = await supabaseClient
-                                        .from('liked_songs')
-                                        .delete()
-                                        .eq('user_id', user.id)
-                                        .eq('song_id', songId);
+                .from('liked_songs')
+                .delete()
+                .eq('user_id', user.id)
+                .eq('song_id', songId);
+            
             if (error) {
                 toast.error(error.message);
             } else {
@@ -66,11 +68,12 @@ const LikeButton: React.FC<LikeButtonProps> = ({
             }
         } else {
             const { error } = await supabaseClient
-                                        .from('liked_songs')
-                                        .insert({
-                                            song_id: songId,
-                                            user_id: user.id
-                                        });
+                .from('liked_songs')
+                .insert({
+                    song_id: songId,
+                    user_id: user.id
+                });
+            
             if (error) {
                 toast.error(error.message);
             } else {
@@ -95,4 +98,4 @@ const LikeButton: React.FC<LikeButtonProps> = ({
     )
 }
 
-export default LikeButton
+export default LikeButton;

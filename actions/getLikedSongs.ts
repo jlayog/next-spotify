@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
  
 const getLikedSongs = async (): Promise<Song[]> => {
   const supabase = createServerComponentClient({
-    cookies: cookies,
+    cookies: cookies
   });
 
   const { 
@@ -29,7 +29,7 @@ const getLikedSongs = async (): Promise<Song[]> => {
     }
 
     return data.map((item) => ({
-      ...item,
+      ...item.songs
     }))
 };
 

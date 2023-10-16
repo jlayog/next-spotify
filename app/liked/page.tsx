@@ -5,7 +5,7 @@ import LikedContent from "./components/LikedContent";
 
 export const revalidate = 0;
 
-const page = async () => {
+const Liked = async () => {
     const songs = await getLikedSongs();
 
     return (
@@ -75,4 +75,4 @@ const page = async () => {
     )
 }
 
-export default page
+export default Liked;
