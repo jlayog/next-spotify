@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import SearchInput from "@/components/SearchInput";
 import SearchContent from "./components/SearchContent";
 
+// do not cache
 export const revalidate = 0;
 
 interface SearchProps {
